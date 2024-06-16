@@ -5,7 +5,7 @@ from typing import Optional
 class Product(BaseModel):
     product_name: str
     product_owner: str
-    created_at: datetime
+    created_at: datetime=datetime.now()
     status: bool
     @validator("product_name", "product_owner")
     def name_must_be_longer_than_two_chars(cls, v):
